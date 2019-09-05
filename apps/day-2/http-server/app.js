@@ -48,4 +48,6 @@ server.listen(
   () => console.log(`Server started and listening on port ${port}`)
 );
 
+console.log('hi from ecom app api');
+
 console.log('end');
