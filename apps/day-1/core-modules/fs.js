@@ -3,7 +3,7 @@ const path = require('path');
 
 console.log('begin');
 
-const filepath = path.join(__dirname, 'fs-test1.txt');
+const filepath = path.join(__dirname, 'fs-test.txt');
 // console.log('filepath:', filepath);
 
 // sync version
@@ -21,3 +21,5 @@ fs.readFile(filepath, 'utf-8', function (err, result) {
 });
 
 console.log('end');
+
+console.log(path.join('/foo', 'bar', 'baz/asdf', 'quux', '..'));

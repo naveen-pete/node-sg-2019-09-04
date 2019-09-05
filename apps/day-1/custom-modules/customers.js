@@ -13,23 +13,15 @@ var c = {
 };
 
 var name = 'Krish';
-this.name = name;
-console.log('outside:', this.name);
-
 function greet() {
-  // console.log('this:', this);
-  console.log('Hello,', this.name);
+  console.log('Hello,', name);
 }
 
-
-// function expression, anonymous function
-(function () {
-  console.log('greetTwo() invoked');
-  console.log('iife executed');
-})();
-
-
-
+// iife
+// (function () {
+//   console.log('greetTwo() invoked');
+//   console.log('iife executed');
+// })();
 
 // module.exports.customer = c;
 // module.exports.greet = greet;
@@ -37,6 +29,4 @@ function greet() {
 module.exports = {
   customer: c,
   greet: greet
-  // ,
-  // greetTwo: greetTwo
 };
