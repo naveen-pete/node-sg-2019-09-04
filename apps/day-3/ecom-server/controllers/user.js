@@ -1,5 +1,4 @@
 const _ = require('lodash');
-const bcrypt = require('bcrypt');
 
 const User = require('../models/user');
 
@@ -25,8 +24,7 @@ const create = async (req, res) => {
       ...req.body
     });
 
-    user.password = await bcrypt.hash(user.password, 10);
-    // user.createHash();
+    user.password = await user.createHash();
 
     await user.save();
 

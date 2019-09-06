@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.methods.createHash = async function () {
-  this.password = await bcrypt.hash(this.password, 10);
+  return await bcrypt.hash(this.password, 10);
 };
 
 const User = mongoose.model('user', userSchema);
