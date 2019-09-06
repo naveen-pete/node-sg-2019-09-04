@@ -8,3 +8,6 @@ Getting Started with Node, Express and Mysql Using Sequelize
 Soap - A SOAP client and server for node.js
 - https://www.npmjs.com/package/soap
 - https://github.com/vpulim/node-soap
+
+Express web framework (Node.js/JavaScript)
+- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs
