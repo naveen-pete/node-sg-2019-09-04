@@ -31,4 +31,4 @@ app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`eCom Server started and listening on ${port}`));
+app.listen(port, () => console.log(`eCom Server started and listening on port ${port}`));
