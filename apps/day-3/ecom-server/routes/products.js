@@ -1,5 +1,7 @@
 const express = require('express');
 
+const Product = require('../models/product');
+
 const router = express.Router();
 
 const products = [
@@ -14,22 +16,16 @@ router.get('/', (req, res) => {
 
 // Create product
 router.post('/', (req, res) => {
-  const product = {
-    ...req.body,
-    id: Date.now()
-  };
+  // validation
+  Product.create(req.body)
+    .then(product => {
+      res.status(201).send(product);
+    })
+    .catch(err => {
+      console.log('Error when inserting a product.');
+      res.status(500).json({ message: err.message });
+    });
 
-  // Object.assign(product, req.body);
-  // product.id = Date.now();
-
-  // product.name = req.body.name;
-  // product.description = req.body.description;
-  // product.price = req.body.price;
-  // product.category = req.body.category;
-  // product.id = Date.now();
-
-  products.push(product);
-  res.status(201).send(product);
 });
 
 // Get a single product

@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 const log = require('./middleware/log');
 const homeRoute = require('./routes/home');
@@ -7,6 +8,18 @@ const productRoutes = require('./routes/products');
 const userRoutes = require('./routes/users');
 
 const app = express();
+
+mongoose.connect(
+  'mongodb://localhost:27017/ecom-server',
+  { useNewUrlParser: true }
+)
+  .then(() => {
+    console.log('Connected to eCom database successfully!')
+  })
+  .catch((err) => {
+    console.log('Error while connecting to eCom database.');
+    console.log('Error:', err);
+  });
 
 app.use(log);
 app.use(morgan('tiny'));
