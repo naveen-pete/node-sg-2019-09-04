@@ -6,6 +6,7 @@ const log = require('./middleware/log');
 const homeRoute = require('./routes/home');
 const productRoutes = require('./routes/products');
 const userRoutes = require('./routes/users');
+const authRoutes = require('./routes/auth');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/', homeRoute);
+app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
 

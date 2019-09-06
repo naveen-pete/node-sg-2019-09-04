@@ -1,13 +1,10 @@
 const express = require('express');
+const controller = require('../controllers/user');
+
 const router = express.Router();
 
-const users = [
-  { id: 1, name: 'Ram', isAdmin: true },
-  { id: 2, name: 'Krish', isAdmin: false }
-];
-
-router.get('/', (req, res) => {
-  res.send(users);
-});
+router.get('/', controller.get);
+router.post('/', controller.create);
+router.get('/:id', controller.getOne);
 
 module.exports = router;
